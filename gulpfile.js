@@ -4,14 +4,14 @@ var gulp = require('gulp'),
 
 
 gulp.task('sass', function(){
-  return gulp.src('src/sass/main.scss')
+  return gulp.src('src/scss/main.scss')
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(gulp.dest('src/css'))
     .pipe(browserSync.stream());
 });
 
 gulp.task('watch', function(){
-  gulp.watch('src/sass/**/*.scss', ['sass']);
+  gulp.watch('src/scss/**/*.scss', ['sass']);
   gulp.watch(['src/*.html', 'src/**/*.js'], browserSync.reload);
 });
 
